@@ -34,7 +34,7 @@
 
   <link rel="canonical" href="https://ritesh27gole.github.io/project/turtlebot/">
 
-  <title>Yuvaan Mars Rover Project</title>
+  <title>Wheeled Bipedal Robot</title>
 
   <style>
     .image-container {
@@ -80,52 +80,18 @@
       <div class="article-container article-style">
     
         <div class="article-title">
-          <h1 itemprop="name">Yuvaan Mars Rover Project</h1>
+          <h1 itemprop="name">Wheeled Bipedal Robot</h1>
         </div> 
         <!-- <br><br> -->
         <p>
-          <ol>
-            <li>
-              Mechanical Design:
-              <ul>
-                <li>Designed, modelled and manufactured a linear actuator-based robotic manipulator and bevel gear differential based end-effector according to competition workspace constraints, performed static and dynamic analysis</li>
-                <li>Achieved a 30% reduction in weight as well as an increase in workspace of the arm </li>
-                <li>Designed robotic arm concepts for several design challenges</li>
-              </ul>
-            </li>
-            <li>
-              Rover and Manipulator Controls:
-              <ul>
-                <li>Deployed encoder feedback-based PID controller interfaced with ROS, for robotic manipulator, 6-wheeled differential drive and on-board testing assembly</li>
-                <li>Experimenting with trajectory planning algorithms like Probabilistic Roadmap</li>
-              </ul>
-            </li>
-            <li>
-              Autonomous Navigation:
-              <ul>
-                <li>Created a simulation environment using ROS and Gazebo with necessary sensor plugins</li>
-                <li>Developed YOLOv8 based arrow detection system and RRT-based path-planner for autonomous navigation task</li>
-              </ul>
-            </li>
-          </ol>
-          
-          <div class="image-container">
-            <div class="image-column">
-              <img src="../../img/yuvaan_full_arm.png" width="350" height="350">
-            </div>
-            <div class="image-row">
-              <div class="image-item">
-                <img src="../../img/yuvaan.jpg" width="400" height="225">
-              </div>
-              <div class="image-item">
-                <img src="../../img/yuvaan_irdc_2022.png" width="768" height="253">
-              </div>
-            </div>
-          </div>
-          
-                    
+          <ul>
+            <li>Modeled a wheeled biped robot with a 4 bar mechanism based limbs enabling rotation in knee and thigh</li>
+            <li>Performed dynamic modeling by getting equations of motion and linearizing them to get state space equations</li>
+            <li>Designed an LQR controller for simple balancing of the robot and simulated the whole system in Gazebo via ROS</li>
+            <li>Trained and simulated simple biped robot model with external perturbations using RL policy in Mujoco simulator</li>
+          </ul>      
 
-          <iframe width="800" height="540" src="https://www.youtube.com/embed/Bvw2lTFFS2k?si=ORbhkNG-jm6_vZF-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="800" height="450" src="https://www.youtube.com/embed/049Rc-GSNSU?si=jLOGoZooMUQZPOXb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </p>
 
         
