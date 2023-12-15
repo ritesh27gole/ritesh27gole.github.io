@@ -5,10 +5,9 @@ The repository for the public code of my personal homepage **https://ritesh27gol
 All the code is public under the **MIT** license. 
 
 ## Projects to be added
-- [] Robo algos
+- [ ] Robo Algos
 
 ## Projects to be updated
-- [] Object Follower
-- [] CL
-- [] FIDO
-
+- [ ] Object Follower
+- [ ] CL
+- [ ] FIDO
