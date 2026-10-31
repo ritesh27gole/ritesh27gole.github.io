@@ -8,95 +8,151 @@
   <meta name="theme" content="hugo-academic">
   <meta name="generator" content="Hugo 0.49" />
   <meta name="author" content="Ritesh Gole">
-  <meta name="description" content="Senior at IIT Guwahati">
+  <meta name="description" content="Wheeled biped (RHEA): symbolic dynamics, a cascaded LQI balance controller and joint-level posture control, simulated in MuJoCo. Research internship at IISc Bangalore.">
 
-
-    <link rel="stylesheet" href="/css/highlight.min.css">
-
-
+  <link rel="stylesheet" href="/css/highlight.min.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
 
-
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
   <link rel="stylesheet" href="/css/hugo-academic.css">
 
-
-
-
-  <link rel="alternate" href="https://ritesh27gole.github.io/index.xml" type="application/rss+xml" title="Ashar Alam">
-  <link rel="feed" href="https://ritesh27gole.github.io/index.xml" type="application/rss+xml" title="Ashar Alam">
+  <link rel="alternate" href="https://ritesh27gole.github.io/index.xml" type="application/rss+xml" title="Ritesh Gole">
+  <link rel="feed" href="https://ritesh27gole.github.io/index.xml" type="application/rss+xml" title="Ritesh Gole">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://ritesh27gole.github.io/project/turtlebot/">
+  <link rel="canonical" href="https://ritesh27gole.github.io/project/wheeled_biped/">
 
-  <title>Wheeled Bipedal Robot</title>
+  <title>Wheeled Biped Robot (RHEA) - IISc Bangalore</title>
 
   <style>
-    .image-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    .summary-box {
+      border-left: 4px solid #1CB5F0;
+      background: #f5f9fc;
+      padding: 12px 16px;
+      margin: 16px 0 24px;
     }
-  
-    .image-column {
-      margin-bottom: 10px;
-    }
-  
-    .image-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    .image-item {
-      flex: 1;
-      margin: 0 5px; /* Adjust the margin as needed */
-    }
-  
-    .image-item img {
-      display: block;
+    .summary-box p { margin: 0 0 6px; }
+    .summary-box p:last-child { margin-bottom: 0; }
+
+    .tech-stack { color: #555; font-size: 0.95em; }
+
+    .video-block { margin: 24px 0; }
+    .video-wrap {
+      position: relative;
       width: 100%;
-      height: auto;
+      max-width: 800px;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .video-caption {
+      max-width: 800px;
+      margin-top: 6px;
+      font-size: 0.9em;
+      color: #555;
     }
   </style>
-  
-  
-  
-  </head>
-  
-  <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
 
-    <div id="nav-placeholder"></div>
-    <script src="//code.jquery.com/jquery.min.js"></script>
-    <script> $.get("/nav.html", function(data){$("#nav-placeholder").replaceWith(data);});</script>
+</head>
 
-    <article class="article article-project" itemscope itemtype="http://schema.org/Article">
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
 
-      <div class="article-container article-style">
-    
-        <div class="article-title">
-          <h1 itemprop="name">Wheeled Bipedal Robot</h1>
-        </div> 
-        <!-- <br><br> -->
-        <p>
-          <ul>
-            <li>Modeled a wheeled biped robot with a limbs-based system enabling rotation in knee and thigh</li>
-            <li>Performed dynamic modeling by getting equations of motion and linearizing them to get state space equations</li>
-            <li>Designed an LQR controller for simple balancing of the robot and simulated the whole system in Mujoco</li>
-            <li>Trained and simulated simple biped robot model with external perturbations using RL policy in Mujoco simulator</li>
-          </ul>      
+  <div id="nav-placeholder"></div>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script> $.get("/nav.html", function(data){$("#nav-placeholder").replaceWith(data);});</script>
 
-          <!-- <iframe width="800" height="450" src="https://www.youtube.com/embed/049Rc-GSNSU?si=jLOGoZooMUQZPOXb" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
-          <iframe width="800" height="450" src="https://www.youtube.com/embed/-OiIKli9kxg?si=6yp_ZbbUH9Pgm3dm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </p>
+  <article class="article article-project" itemscope itemtype="http://schema.org/Article">
 
-        
+    <div class="article-container article-style">
 
+      <div class="article-title">
+        <h1 itemprop="name">Wheeled Biped Robot (RHEA)</h1>
       </div>
-  </body>
+
+      <div class="summary-box">
+        <p><strong>Research internship, Stochastic Robotics Lab, Robert Bosch Centre for Cyber-Physical Systems, IISc Bangalore.</strong> Apr. - Jul. 2023.</p>
+        <p><strong>What I did:</strong> derived the robot's dynamics, designed the balance controllers, and simulated the full system in MuJoCo. I also supported reinforcement learning policy tuning for disturbance rejection.</p>
+        <p><strong>Credit:</strong> the robot model (URDF) is based on G-Levine's open-source Rhea model. The dynamics, controllers and simulation work are mine.</p>
+      </div>
+
+      <p>
+        RHEA is a wheeled biped: a chassis on two legs, each with a hip and a knee joint and a driven wheel at the end.
+        The goal was to make it balance and move in simulation.
+      </p>
+      <p class="tech-stack">
+        <strong>Tech stack:</strong> Python, SymPy, MuJoCo, LQR/LQI control, PID control, reinforcement learning (policy tuning)
+      </p>
+
+      <h2>How the system works</h2>
+
+      <h3>Dynamic modeling</h3>
+      <p>
+        Built a symbolic dynamics model in SymPy using Lagrangian mechanics, covering the body, hip link, knee link and wheel, with the wheel's rolling constraint.
+        This gives a mass matrix and the full equations of motion, which were cross-checked against MuJoCo.
+        For balancing, the robot is modeled as an inverted pendulum and the equations are linearized about the upright pose to get a state-space model.
+      </p>
+
+      <h3>Balance control with LQR</h3>
+      <p>
+        Designed a Linear Quadratic Regulator (LQR) on the linearized model to keep the robot upright, and simulated the closed loop in MuJoCo.
+      </p>
+
+      <h3>Cascaded control architecture</h3>
+      <p>After the LQR stage, I extended the controller into three layers:</p>
+      <ol>
+        <li><strong>Joint-level posture control:</strong> PID on the hip and knee joints. Its integral term also acts as gravity compensation for the chassis.</li>
+        <li><strong>Balance and velocity tracking:</strong> a Linear Quadratic Integral (LQI) controller on a 4-state sagittal model.</li>
+        <li><strong>Yaw control:</strong> a PD controller that turns the robot using differential wheel torque, with balance-priority saturation so a turn command can never take away the torque the robot needs to stay upright.</li>
+      </ol>
+
+      <h3>Reinforcement learning for disturbance rejection</h3>
+      <p>
+        I supported training and tuning an RL policy for a simple biped model in MuJoCo, with external perturbations applied to test disturbance rejection.
+      </p>
+
+      <!-- <h2>Challenges and what I learned</h2>
+
+      <h3>It balanced, but it kept drifting</h3>
+      <p>
+        The LQR kept the robot upright, but it slowly drifted forward.
+        The cause was in my model assumption: small tracking errors in the hip and knee motors, together with gravity acting on the legs, meant the center of mass never sat exactly above the wheel contact point.
+        I added integral action (LQI) to compensate for the unmodeled pitch offset, and paired it with a joint-level posture controller that actively kept the center of mass aligned over the wheels.
+        <em>Lesson:</em> a controller is only as good as the assumptions in its model, and unmodeled effects like gravity on the legs show up as steady-state error that integral action and good joint-level control have to absorb.
+      </p>
+
+      <h3>Turning must not break balancing</h3>
+      <p>
+        Yaw is controlled through differential wheel torque, but the same wheel torque is what keeps the robot balanced.
+        A naive turn command could saturate the motors and tip the robot over, so the yaw controller was given lower priority than balance when torque is limited.
+        <em>Lesson:</em> when several objectives share one actuator, you have to decide explicitly which one wins.
+      </p>
+
+      <h2>What this project led to</h2>
+      <p>
+        Balancing worked, but I had assumed a simplified model, and I could not say how to control a robot whose dynamics I could not write down so cleanly.
+        That question pushed me towards underactuated systems and nonlinear control, and it is the reason I want to learn where reinforcement learning earns its place alongside classical control.
+      </p> -->
+
+      <h2>Video</h2>
+
+      <div class="video-block">
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/-OiIKli9kxg?si=6yp_ZbbUH9Pgm3dm" title="Wheeled biped robot simulation in MuJoCo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">[Demonstration of balancing and traversal]</p>
+      </div>
+
+    </div>
+  </article>
+</body>
 </html>

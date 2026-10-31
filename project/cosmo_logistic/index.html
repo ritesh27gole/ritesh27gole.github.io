@@ -96,7 +96,7 @@
       <h2>How the system works</h2>
 
       <h3>Perception: finding the packages</h3>
-      <p>I developed a framework that estimates the pose of ArUco-tagged boxes in the UR5 base frame using an Intel RealSense camera.</p>
+      <p>Developed a framework that estimates the pose of ArUco-tagged boxes in the UR5 base frame using an Intel RealSense camera.</p>
       <ol>
         <li>Convert the camera image to grayscale.</li>
         <li>Detect the ArUco markers with OpenCV and store each marker's corners and ID.</li>
@@ -106,7 +106,7 @@
       </ol>
 
       <h3>Manipulation: picking and placing with the UR5</h3>
-      <p>I programmed the UR5 pick-and-place operation, driving the gripper to the estimated box poses using MoveIt Servo.</p>
+      <p>Programmed the UR5 pick-and-place operation, driving the gripper to the estimated box poses using MoveIt Servo.</p>
       <ul>
         <li>The pose error between the box and the gripper is fed into MoveIt 2's forward position controller service.</li>
         <li>Once the gripper touches the box, the gripper is commanded to attach through its control service.</li>
@@ -114,15 +114,15 @@
       </ul>
 
       <h3>Navigation: moving around the warehouse</h3>
-      <p>I configured and tuned slam_toolbox mapping, AMCL localization and Nav2 navigation on a live autonomous mobile robot (AMR). Wheel odometry was fused with the IMU using an EKF.</p>
+      <p>Configured and tuned slam_toolbox mapping, AMCL localization and Nav2 navigation on a live autonomous mobile robot (AMR). Wheel odometry was fused with the IMU using an EKF.</p>
 
       <h3>Docking: attaching the rack</h3>
       <p>
-        The mobile robot aligns itself underneath a rack, and an electromagnet turns on to attach it. I built an IMU and ultrasonic docking controller for this alignment.
+        The mobile robot aligns itself underneath a rack, and an electromagnet turns on to attach it. Built an IMU and ultrasonic docking controller for this alignment.
       </p>
 
-      <h2>Challenges and what I learned</h2>
-<!-- 
+      <!-- <h2>Challenges and what I learned</h2>
+
       <h3>The arm hid its own target</h3>
       <p>
         During pick and place, the robot arm blocked the package's ArUco tag as it reached to grasp, so the tag was lost mid-motion.
@@ -144,35 +144,35 @@
         <div class="video-wrap">
           <iframe src="https://www.youtube.com/embed/oOqkUKCz5H0?si=k3GUrrrz7iMty6s0" title="Cosmo Logistics Bot video 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <p class="video-caption">[Video 1: add a one-line caption, e.g. simulation or real warehouse, and which task it shows]</p>
+        <p class="video-caption">[Video 1: Pick-and-place in simulation]</p>
       </div>
 
       <div class="video-block">
         <div class="video-wrap">
           <iframe src="https://www.youtube.com/embed/8a2Oyj9j1mw?si=OkXjR_szq-TVv4qi" title="Cosmo Logistics Bot video 2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <p class="video-caption">[Video 2: add a one-line caption]</p>
+        <p class="video-caption">[Video 2: Navigation and docking in simulation</p>
       </div>
 
       <div class="video-block">
         <div class="video-wrap">
           <iframe src="https://www.youtube.com/embed/_sijToJmSeM?si=oUIWUwbfKyIlxuTI" title="Cosmo Logistics Bot video 3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <p class="video-caption">[Video 3: add a one-line caption]</p>
+        <p class="video-caption">[Video 3: How navigation and pick-place work in conjunction as a system]</p>
       </div>
 
       <div class="video-block">
         <div class="video-wrap">
           <iframe src="https://www.youtube.com/embed/QzzEV8qFXoA?si=YxDFF-UnTUUo2lFV" title="Cosmo Logistics Bot video 4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <p class="video-caption">[Video 4: add a one-line caption]</p>
+        <p class="video-caption">[Video 4: Testing on real hardware via remote access]</p>
       </div>
 
       <div class="video-block">
         <div class="video-wrap">
           <iframe src="https://www.youtube.com/embed/TgTI2Q6f8Is?si=XUQ9pxyc5YoEL625" title="Cosmo Logistics Bot video 5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-        <p class="video-caption">[Video 5: add a one-line caption]</p>
+        <p class="video-caption">[Video 5: Full task]</p>
       </div>
 
     </div>

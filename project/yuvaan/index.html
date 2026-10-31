@@ -8,128 +8,186 @@
   <meta name="theme" content="hugo-academic">
   <meta name="generator" content="Hugo 0.49" />
   <meta name="author" content="Ritesh Gole">
-  <meta name="description" content="Senior at IIT Guwahati">
+  <meta name="description" content="Yuvaan, the IIT Guwahati Mars Rover team: IITG's first competition robotic arm, onboard control and autonomous navigation. 7th worldwide at IRDC 2023.">
 
-
-    <link rel="stylesheet" href="/css/highlight.min.css">
-
-
+  <link rel="stylesheet" href="/css/highlight.min.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
 
-
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
   <link rel="stylesheet" href="/css/hugo-academic.css">
 
-
-
-
-  <link rel="alternate" href="https://ritesh27gole.github.io/index.xml" type="application/rss+xml" title="Ashar Alam">
-  <link rel="feed" href="https://ritesh27gole.github.io/index.xml" type="application/rss+xml" title="Ashar Alam">
+  <link rel="alternate" href="https://ritesh27gole.github.io/index.xml" type="application/rss+xml" title="Ritesh Gole">
+  <link rel="feed" href="https://ritesh27gole.github.io/index.xml" type="application/rss+xml" title="Ritesh Gole">
 
   <link rel="icon" type="image/png" href="/img/icon.png">
   <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
 
-  <link rel="canonical" href="https://ritesh27gole.github.io/project/turtlebot/">
+  <link rel="canonical" href="https://ritesh27gole.github.io/project/yuvaan/">
 
-  <title>Yuvaan Mars Rover Project</title>
+  <title>Yuvaan IITG Mars Rover</title>
 
   <style>
+    .summary-box {
+      border-left: 4px solid #1CB5F0;
+      background: #f5f9fc;
+      padding: 12px 16px;
+      margin: 16px 0 24px;
+    }
+    .summary-box p { margin: 0 0 6px; }
+    .summary-box p:last-child { margin-bottom: 0; }
+
+    .tech-stack { color: #555; font-size: 0.95em; }
+
     .image-container {
       display: flex;
       flex-direction: column;
       align-items: center;
+      max-width: 800px;
     }
-  
-    .image-column {
-      margin-bottom: 10px;
-    }
-  
+    .image-column { margin-bottom: 10px; max-width: 100%; }
     .image-row {
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
-    }
-  
-    .image-item {
-      flex: 1;
-      margin: 0 5px; /* Adjust the margin as needed */
-    }
-  
-    .image-item img {
-      display: block;
       width: 100%;
+    }
+    .image-item {
+      flex: 1 1 280px;
+      margin: 0 5px 10px;
+    }
+    .image-item img, .image-column img {
+      display: block;
+      max-width: 100%;
       height: auto;
     }
+    .image-item img { width: 100%; }
+
+    .video-block { margin: 24px 0; }
+    .video-wrap {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+    }
+    .video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .video-caption {
+      max-width: 800px;
+      margin-top: 6px;
+      font-size: 0.9em;
+      color: #555;
+    }
   </style>
-  
-  
-  
-  </head>
-  
-  <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
 
-    <div id="nav-placeholder"></div>
-    <script src="//code.jquery.com/jquery.min.js"></script>
-    <script> $.get("/nav.html", function(data){$("#nav-placeholder").replaceWith(data);});</script>
+</head>
 
-    <article class="article article-project" itemscope itemtype="http://schema.org/Article">
+<body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
 
-      <div class="article-container article-style">
-    
-        <div class="article-title">
-          <h1 itemprop="name">Yuvaan Mars Rover Project</h1>
-        </div> 
-        <!-- <br><br> -->
-        <p>
-          <ol>
-            <li>
-              Mechanical Design:
-              <ul>
-                <li>Designed, modelled and manufactured a linear actuator-based robotic manipulator and bevel gear differential based end-effector according to competition workspace constraints, performed static and dynamic analysis</li>
-                <li>Achieved a 30% reduction in weight as well as an increase in workspace of the arm </li>
-                <li>Designed robotic arm concepts for several design challenges</li>
-              </ul>
-            </li>
-            <li>
-              Rover and Manipulator Controls:
-              <ul>
-                <li>Deployed encoder feedback-based PID controller interfaced with ROS, for robotic manipulator, 6-wheeled differential drive and on-board testing assembly</li>
-                <li>Experimenting with trajectory planning algorithms like Probabilistic Roadmap</li>
-              </ul>
-            </li>
-            <li>
-              Autonomous Navigation:
-              <ul>
-                <li>Created a simulation environment using ROS and Gazebo with necessary sensor plugins</li>
-                <li>Developed YOLOv8 based arrow detection system and RRT-based path-planner for autonomous navigation task</li>
-              </ul>
-            </li>
-          </ol>
-          
-          <div class="image-container">
-            <div class="image-column">
-              <img src="../../img/yuvaan_full_arm.png" width="350" height="350">
-            </div>
-            <div class="image-row">
-              <div class="image-item">
-                <img src="../../img/yuvaan.jpg" width="400" height="225">
-              </div>
-              <div class="image-item">
-                <img src="../../img/yuvaan_irdc_2022.png" width="768" height="253">
-              </div>
-            </div>
-          </div>
-          
-                    
+  <div id="nav-placeholder"></div>
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script> $.get("/nav.html", function(data){$("#nav-placeholder").replaceWith(data);});</script>
 
-          <iframe width="800" height="540" src="https://www.youtube.com/embed/Bvw2lTFFS2k?si=ORbhkNG-jm6_vZF-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </p>
+  <article class="article article-project" itemscope itemtype="http://schema.org/Article">
 
-        
+    <div class="article-container article-style">
 
+      <div class="article-title">
+        <h1 itemprop="name">Yuvaan IITG Mars Rover</h1>
       </div>
-  </body>
+
+      <div class="summary-box">
+        <p><strong>Robotics Club, IIT Guwahati.</strong> Jul. 2021 - Apr. 2024.</p>
+        <p><strong>Roles:</strong> Robotic Manipulator Lead (Jun. 2022 - Apr. 2023), leading a 10-member team. Team Lead (Apr. 2023 - Apr. 2024), leading a 40+ member team across mechanical, software, bio-assembly and navigation.</p>
+        <p><strong>Results:</strong> IRDC rank improved from 11th (2022) to 7th (2023) worldwide. Top 20 onsite finalist at the International Rover Challenge in 2022 and 2023. Best Project Award (Jury and Overall) at Techevince 8.0, 2022.</p>
+      </div>
+
+      <p>
+        Yuvaan is the Mars rover built by IIT Guwahati's Robotics Club for international student rover competitions.
+        The work covered the rover's robotic arm, its onboard control, and its autonomous navigation, and it included building IITG's first robotic arm for a student rover competition.
+      </p>
+      <p class="tech-stack">
+        <strong>Tech stack:</strong> ROS, Gazebo, Jetson Nano, Arduino, PID control, OpenCV, YOLOv8, RRT, ANSYS, CAD
+      </p>
+
+      <h2>How the system works</h2>
+
+      <h3>Mechanical design</h3>
+      <ul>
+        <li>A 5-DOF, linear actuator-based robotic manipulator with a bevel-gear differential end-effector was designed, modeled and manufactured to fit the competition's workspace constraints.</li>
+        <li>Static and dynamic analysis was carried out, including structural analysis in ANSYS. The result was a 30% reduction in weight and a larger workspace for the arm.</li>
+        <li>Arm concepts were also designed for several of the competition's design challenges.</li>
+      </ul>
+
+      <h3>Rover and manipulator control</h3>
+      <ul>
+        <li>A Jetson Nano acts as the ROS hub for the rover, with a dedicated Arduino per subsystem running encoder feedback-based PID control.</li>
+        <li>The same architecture drives the robotic arm and the 6-wheeled differential-drive traversal.</li>
+      </ul>
+
+      <h3>Autonomous navigation</h3>
+      <ul>
+        <li>A simulation environment was created in ROS and Gazebo with the required sensor plugins.</li>
+        <li>A YOLOv8-based arrow detector and an RRT-based path planner handle the autonomous navigation task.</li>
+      </ul>
+
+      <!-- <h2>Challenges and lessons learned</h2>
+
+      <h3>Stuck on the rocks at the International Rover Challenge 2023</h3>
+      <p>
+        During the finals, the rover drove onto a pile of rocks and got stuck. The wheels turned, but the rover did not move, and there was no backup plan.
+        The rover was teleoperated, with the arm and wheels both controlled by joystick from the base station, so the arm could have pushed against the ground or swung to build momentum.
+        That option was not thought of under pressure.
+        <em>Lesson:</em> recovery maneuvers need to be planned and rehearsed before competition day, because improvising under pressure is unreliable.
+      </p>
+
+      <h3>Loads and poses that did not match the plan</h3>
+      <p>
+        In testing, a heavy dumbbell held in the end-effector loaded the actuators, so they needed more voltage, and the shifting load could unbalance or topple the rover.
+        A switch-flipping task failed, most likely because the end-effector pose was wrong.
+        <em>Lesson:</em> step back and plan the motion, including the loads and poses involved, before commanding it.
+      </p>
+
+      <h2>What this project led to</h2>
+      <p>
+        These failures raised questions that stayed unanswered: how a robot could discover a recovery maneuver on the spot, and how to build controllers that stay reliable when the environment does something unexpected.
+        They shaped the interest in motion planning and control for robots operating in uncertain environments.
+      </p> -->
+
+      <h2>Photos</h2>
+
+      <div class="image-container">
+        <div class="image-column">
+          <img src="../../img/yuvaan_full_arm.png" width="350" height="350" alt="The full Yuvaan robotic arm">
+        </div>
+        <div class="image-row">
+          <div class="image-item">
+            <img src="../../img/yuvaan.jpg" width="400" height="225" alt="The Yuvaan Mars Rover">
+          </div>
+          <div class="image-item">
+            <img src="../../img/yuvaan_irdc_2022.png" width="768" height="253" alt="Yuvaan at IRDC 2022">
+          </div>
+        </div>
+      </div>
+
+      <h2>Video</h2>
+
+      <div class="video-block">
+        <div class="video-wrap">
+          <iframe src="https://www.youtube.com/embed/Bvw2lTFFS2k?si=ORbhkNG-jm6_vZF-" title="Yuvaan Mars Rover video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">Arrow detection using YOLOv8</p>
+      </div>
+
+    </div>
+  </article>
+</body>
 </html>
