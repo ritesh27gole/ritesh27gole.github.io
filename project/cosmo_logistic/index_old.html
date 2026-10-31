@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="theme" content="hugo-academic">
+  <meta name="generator" content="Hugo 0.49" />
+  <meta name="author" content="Ritesh Gole">
+  <meta name="description" content="Senior at IIT Guwahati">
+
+
+    <link rel="stylesheet" href="/css/highlight.min.css">
+
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha512-6MXa8B6uaO18Hid6blRMetEIoPqHf7Ux1tnyIQdpt9qI5OACx7C+O3IVTr98vwGnlcg0LOLa02i9Y1HpVhlfiw==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.0/css/academicons.min.css" integrity="sha512-GGGNUPDhnG8LEAEDsjqYIQns+Gu8RBs4j5XGlxl7UfRaZBhCCm5jenJkeJL8uPuOXGqgl8/H1gjlWQDRjd3cUQ==" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700%7CMerriweather%7CRoboto+Mono">
+  <link rel="stylesheet" href="/css/hugo-academic.css">
+
+
+
+
+  <link rel="alternate" href="https://ritesh27gole.github.io/index.xml" type="application/rss+xml" title="Ashar Alam">
+  <link rel="feed" href="https://ritesh27gole.github.io/index.xml" type="application/rss+xml" title="Ashar Alam">
+
+  <link rel="icon" type="image/png" href="/img/icon.png">
+  <link rel="apple-touch-icon" type="image/png" href="/img/apple-touch-icon.png">
+
+  <link rel="canonical" href="https://ritesh27gole.github.io/project/turtlebot/">
+
+  <title>Cosmo Logistics - e-Yantra Robotics Challenge 2024</title>
+
+  <style>
+    .image-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .image-column {
+      margin-bottom: 10px;
+    }
+  
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  
+    .image-item {
+      flex: 1;
+      margin: 0 5px; /* Adjust the margin as needed */
+    }
+  
+    .image-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  </style>
+  
+  
+  
+  </head>
+  
+  <body id="top" data-spy="scroll" data-target="#navbar-main" data-offset="71">
+
+    <div id="nav-placeholder"></div>
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script> $.get("/nav.html", function(data){$("#nav-placeholder").replaceWith(data);});</script>
+
+    <article class="article article-project" itemscope itemtype="http://schema.org/Article">
+
+      <div class="article-container article-style">
+    
+        <div class="article-title">
+          <h1 itemprop="name">Cosmo Logistics Bot</h1>
+        </div> 
+        <!-- <br><br> -->
+        <p>
+          <ul>
+            <li> Problem Statement: Design an algorithm for fully autonomous collaboration of a robotic arm and mobile robot to sort packages in a warehouse.</li>
+            <li> Competition had two stages: Development in simulation (Gazebo); Deploy and test on real hardware present in a real warehouse at IIT Bombay with remote access.</li>
+            <li> Learnings: Robot Operating System 2 (ROS 2), Gazebo, MoveIt 2, Computer Vision, Git, RViz 2, Nav 2</li>
+
+            <li> Perception: Pose estimation using Aruco markers and depth camera.</li>
+            <li> Developed a framework to estimate the pose of ArUco-tagged boxes in the UR5 base frame using Intel RealSense. </li>
+            <li> Converted input image to grayscale -> 
+                 Used OpenCV to detect the markers and stored their respective corners and id -> 
+                 Looped over each marker id detected in the frame, calculated its area and removed tags which are far away from arm's reach positon based on threshold ->
+                 Got rotation and translation vectors of the markers in the list with respect to the camera along with their center points ->
+                 Converted it into a TF in the base_link frame and published it for Manipulation.           
+            </li>
+            
+            <li> Manipulation: Manipulation of UR5 arm to pick-and-place packages.</li>
+            <li> Programmed UR5 pick-and-place operation, driving the gripper to estimated box poses using MoveIt Servo. </li>
+            <li> Fed pose error between the box and the gripper into MoveIt2's forward position controller service ->
+                 Once the gripper touches the box, gripper is commanded to attach via it control service ->
+                 It is similarly taken to a pre-defined drop position and gripper is commanded to detach the box, dropping it in a container.
+            </li>
+
+            <li> Navigation: Autonomous navigation using Simultaneous Localization And Mapping (SLAM).</li>
+            <li> Configured and tuned slam_toolbox mapping, AMCL localization and Nav2 navigation on a live AMR. </li>
+            <li> Fused wheel odometry with IMU using an EKF.</li>
+
+            <li> Docking: Electromagnet turns on to attach the rack with the mobile robot. Autonomous alignment underneath the rack</li>
+            <li> Added an IMU + ultrasonic docking controller for alignment. </li>
+          </ul>      
+          <iframe width="800" height="500" src="https://www.youtube.com/embed/oOqkUKCz5H0?si=k3GUrrrz7iMty6s0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="800" height="500" src="https://www.youtube.com/embed/8a2Oyj9j1mw?si=OkXjR_szq-TVv4qi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="800" height="500" src="https://www.youtube.com/embed/_sijToJmSeM?si=oUIWUwbfKyIlxuTI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="800" height="500" src="https://www.youtube.com/embed/QzzEV8qFXoA?si=YxDFF-UnTUUo2lFV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe width="800" height="500" src="https://www.youtube.com/embed/TgTI2Q6f8Is?si=XUQ9pxyc5YoEL625" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </p>
+
+        
+
+      </div>
+  </body>
+</html>
